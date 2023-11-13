@@ -37,8 +37,16 @@ const style = StyleSheet.create({
     },
 
     title: {
-      color: light ? Colors.dark : Colors.dark,
+      color: light ? Colors.gray : Colors.gray,
       fontSize: fontSizes.large,
+      alignSelf: "center",
+      margin: "10%",
+      textAlign: "center"
+    },
+
+    subHeading: {
+      color: light ? Colors.gray : Colors.gray,
+      fontSize: fontSizes.medium,
       alignSelf: "center",
       margin: "10%",
       textAlign: "center"

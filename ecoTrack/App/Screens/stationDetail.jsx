@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   ScrollView,
-  View,
-  Text
+  View
 } from 'react-native';
 
 import { StationControl } from '../Navigation/route';
@@ -10,7 +9,7 @@ import { MeasurementLineChart } from './Partials/charts';
 
 import { Spaces } from '../Constants/theme';
 import { DisplayErrMessage } from '../Components/loading';
-import { Title, Paragraph } from '../Components/texts';
+import { Title, SubHeading, Paragraph } from '../Components/texts';
 import { LoadingIndicator } from '../Components/loading';
 import { TableColumn, TableRow } from '../Components/tableView';
 
@@ -60,14 +59,18 @@ const StationDetailScreen = ({route}) => {
             <Paragraph text={`Catchment Name: ${ selectedStation.catchmentName }`}  />
             <Paragraph text={`Period: ${ selectedStation.measures[0].period }`}  />
 
-            <View style={{ marginBottom: Spaces.large * 2 }}>
-
+            <View style={{ marginVertical: Spaces.large }}>
+              <SubHeading text="Live Reading...." />
             </View>
 
           {!data ? <LoadingIndicator /> :
                 <MeasurementLineChart line={data} />
           }
 
+        </View>
+
+        <View style={{ marginVertical: Spaces.large }}>
+              <SubHeading text="Live Data on Table" />
         </View>
 
         <TableColumn />
